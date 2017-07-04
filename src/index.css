@@ -1,0 +1,150 @@
+body {
+  background: #f5f5f5; 
+  font-family: arial;
+}
+
+.container {
+  width: 700px;
+  padding: 50px;
+  margin: auto;
+  align-content: center;
+  text-align: center;
+  display: block;
+  z-index: -5;
+
+}
+
+.container-todo {
+  width: 100%;
+  color: black;
+  margin-top: 5%;
+  box-shadow: -1px 10px 20px #888888;
+  background: white;
+  padding-bottom: 10px; 
+}
+
+/*---ADD TODO FORM ----------------------*/
+.add-todo-form input{
+  width: 90%;
+  border: none;
+  font-size: 3rem;
+  padding: 10px 10px;
+  background: white;
+}
+
+.add-todo-form input::-webkit-input-placeholder{
+  color: #ddd;
+}
+
+.add-todo-form input:focus {
+  outline: none;
+}
+/*-------------------------------------   */
+
+
+.container h1 {
+  display: inline;
+  float: none;
+  min-width: 10px;
+  margin: auto;
+  color: black;
+  font:14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size:6rem;
+}
+
+.todo {
+  text-align: left;
+  margin-left: 35px;
+  margin-top: 10px;
+}
+
+.todo-main {
+  display: inline-block;
+  width: 95%;
+}
+
+.remove-todo {
+  display: inline-block;
+  width: 5%;
+  align-self: flex-end;
+  visibility: hidden;
+}
+
+.todo:hover .remove-todo {
+  visibility: visible;
+}
+
+
+.todo a {
+  text-decoration: none;
+  color: red;
+  text-align: right;
+  display: inline-block;
+  align-self: right;
+}
+
+.todo a:active {
+  text-decoration: none;
+  text-align: right;
+}
+
+
+/*---CHECKBOX STYLES------------------------------*/
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -50;
+}
+label {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
+  line-height: 36px;
+  cursor: pointer;
+}
+label::before {
+  content: " ";
+  position: absolute;
+  top: 3px;
+  left: -10px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid yellow;
+  border-radius: 4px;
+  z-index: 0;
+}
+input[type="radio"] + label::before {
+  border-radius: 18px;
+}
+/* Checked */
+input[type="checkbox"]:checked + label,
+input[type="radio"]:checked + label {
+  padding-left: 10px;
+  color: #000;
+  text-decoration: line-through;
+  z-index: 5;
+  
+}
+input[type="checkbox"]:checked + label::before,
+input[type="radio"]:checked + label::before {
+  top: 0;
+  width: 110%;
+  height: 100%;
+  background: yellow;
+  z-index: -1;
+}
+/* Transition */
+label,
+label::before {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+
